@@ -7,6 +7,8 @@ from profiler.arguments import ProfilerParser
 from profiler.perform import profile
 
 def main():
+  ''' main() for profiler. Parses arguments and calls primary function'''
+
   parser = ProfilerParser()
 
   args = parser.parse_args()
