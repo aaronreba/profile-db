@@ -1,4 +1,4 @@
-from database_handler import DatabaseHandler
+from database_controller import DatabaseController
 
 def profile(databases, count, iterations):
   '''
@@ -7,15 +7,15 @@ def profile(databases, count, iterations):
   Will perform n iterations of all tasks specified on all databases specified.
   '''
 
-  database_handler = DatabaseHandler(databases, count)
+  database_controller = DatabaseController(databases, count)
 
-  database_handler.connect()
+  database_controller.connect()
 
   for i in xrange(iterations):
-    database_handler.insert()
-    database_handler.read()
-    database_handler.delete()
+    database_controller.insert()
+    database_controller.read()
+    database_controller.delete()
 
-  database_handler.close()
+  database_controller.close()
 
-  database_handler.report()
+  database_controller.report()
